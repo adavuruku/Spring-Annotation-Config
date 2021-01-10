@@ -12,7 +12,16 @@
     	in the specify packages and register all the beans
     -->
     <context:component-scan base-package="com.luv2code.springdemo"/>
+    <!-- this is to inject value from property file for field injections
     
+    	in the bean you can have this on a variable
+    	@Value("${foo.email}")
+		private String email;
+		    
+		@Value("${foo.team}")
+		private String team;
+     -->
+    <context:property-placeholder location="classpath:sport.properties"/>
 </beans>
 
 

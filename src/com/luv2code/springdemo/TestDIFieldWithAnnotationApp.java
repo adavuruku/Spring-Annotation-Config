@@ -2,7 +2,7 @@ package com.luv2code.springdemo;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class TestDIConstructorWithAnnotationApp {
+public class TestDIFieldWithAnnotationApp {
 
 	public static void main(String[] args) {
 
@@ -11,7 +11,7 @@ public class TestDIConstructorWithAnnotationApp {
 				new ClassPathXmlApplicationContext("applicationContext.xml");
 		
 		// get the bean from spring container
-		Coach theCoach = context.getBean("tennisCoachDIConstructor", Coach.class);
+		Coach theCoach = context.getBean("tennisCoachDIField", TennisCoachDIField.class);
 		
 		// call a method on the bean
 		System.out.println(theCoach.getDailyWorkout());

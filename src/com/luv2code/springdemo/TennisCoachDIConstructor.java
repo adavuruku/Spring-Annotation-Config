@@ -1,6 +1,8 @@
 package com.luv2code.springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 
@@ -9,7 +11,15 @@ import org.springframework.stereotype.Component;
 @Component
 public class TennisCoachDIConstructor implements Coach {
 
+	
 	private FortuneService fortuneService;
+	
+	
+//	@Value("${foo.email}")
+//	private String email;
+//	    
+//	@Value("${foo.team}")
+//	private String team;
 	
 	@Override
 	public String getDailyWorkout() {
@@ -30,11 +40,22 @@ public class TennisCoachDIConstructor implements Coach {
 	 *  which one to use.
 	 */
 	@Autowired
-	public TennisCoachDIConstructor(FortuneService fortuneService) {
+	public TennisCoachDIConstructor(@Qualifier("fortuneServiceImplement") FortuneService fortuneService) {
+		System.out.println("Inside Constructor DI Annotation ");
 		this.fortuneService = fortuneService;
 	}
 	
 	
+//	public String getEmail() {
+//		return email;
+//	}
+//
+//	public String getTeam() {
+//		return team;
+//	}
+	
+	
+	@Override
 	public String getDailyFortune() {
 		return fortuneService.getFortune();
 	}
