@@ -11,15 +11,15 @@ public class TestDIFieldWithAnnotationApp {
 				new ClassPathXmlApplicationContext("applicationContext.xml");
 		
 		// get the bean from spring container
-		Coach theCoach = context.getBean("tennisCoachDIField", TennisCoachDIField.class);
+		TennisCoachDIField theCoach = context.getBean("tennisCoachDIField", TennisCoachDIField.class);
 		
 		// call a method on the bean
 		System.out.println(theCoach.getDailyWorkout());
 		
 		System.out.println(theCoach.getDailyFortune());
 		
-//		System.out.println(theCoach.getTeam());
-//		System.out.println(theCoach.getEmail());
+		System.out.println(theCoach.getTeam());
+		System.out.println(theCoach.getEmail());
 				
 		// close the context
 		context.close();

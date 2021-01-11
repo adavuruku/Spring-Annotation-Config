@@ -15,12 +15,6 @@ public class TennisCoachDIConstructor implements Coach {
 	private FortuneService fortuneService;
 	
 	
-//	@Value("${foo.email}")
-//	private String email;
-//	    
-//	@Value("${foo.team}")
-//	private String team;
-	
 	@Override
 	public String getDailyWorkout() {
 		return "Practice your backhand volley";

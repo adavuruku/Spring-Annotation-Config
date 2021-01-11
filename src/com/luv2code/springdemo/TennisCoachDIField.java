@@ -19,7 +19,7 @@ public class TennisCoachDIField implements Coach {
 	private String team;
 	
 	public TennisCoachDIField() {
-		System.out.println("Inside Default Field Constructor" + email + team);
+		System.out.println("Inside Default Field Constructor");
 	}
 	@Override
 	public String getDailyWorkout() {
@@ -30,5 +30,13 @@ public class TennisCoachDIField implements Coach {
 	public String getDailyFortune() {
 		return fortuneService.getFortune();
 	}
+	public String getEmail() {
+		return email;
+	}
+	public String getTeam() {
+		return team;
+	}
+	
+	
 
 }
